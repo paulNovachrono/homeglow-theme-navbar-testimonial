@@ -5,7 +5,7 @@
             <!-- Logo & About -->
             <div>
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>" class="h-28 w-auto">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="<?php bloginfo('name'); ?>" class="h-28 w-auto">
                 </a>
                 <p class="text-white/70 mt-4 leading-relaxed">Expert remodeling, renovations, and custom home builds with quality craftsmanship and exceptional service.</p>
                 <div class="flex gap-3 mt-6">

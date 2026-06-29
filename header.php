@@ -12,7 +12,7 @@
     <div id="navBody" class="hidden lg:flex items-center justify-between bg-transparent rounded-full px-6 py-3 transition-all duration-500">
         <div class="bg-white rounded-3xl pl-2 pr-3 py-2 transition-all duration-300" id="navLogoBg">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center shrink-0">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>" class="h-16 w-auto">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="<?php bloginfo('name'); ?>" class="h-16 w-auto">
             </a>
         </div>
 
@@ -37,7 +37,7 @@
     <div id="mobileNavBody" class="lg:hidden flex w-full flex-col bg-transparent rounded-2xl px-4 py-3 transition-all duration-500">
         <div class="flex items-center justify-between">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>" class="h-14 w-auto">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="<?php bloginfo('name'); ?>" class="h-14 w-auto">
             </a>
 
             <button class="relative z-50 w-8 h-8 flex flex-col items-center justify-center gap-1.5" id="mobileMenuBtn" aria-label="Toggle menu">
