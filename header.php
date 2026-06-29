@@ -10,8 +10,8 @@
 
 <header class="fixed inset-x-0 top-0 z-50 flex justify-center pt-4" id="site-header">
     <div id="navBody" class="hidden lg:flex items-center justify-between bg-transparent rounded-full px-6 py-3 transition-all duration-500">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2 shrink-0">
-            <span class="text-xl font-bold text-green tracking-tight"><?php bloginfo('name'); ?></span>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center shrink-0">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>" class="h-10 w-auto">
         </a>
 
         <nav class="flex items-center" id="desktopNav">
@@ -34,8 +34,8 @@
 
     <div id="mobileNavBody" class="lg:hidden flex w-full flex-col bg-transparent rounded-2xl px-4 py-3 transition-all duration-500">
         <div class="flex items-center justify-between">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2">
-                <span class="text-xl font-bold text-green tracking-tight"><?php bloginfo('name'); ?></span>
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>" class="h-9 w-auto">
             </a>
 
             <button class="relative z-50 w-8 h-8 flex flex-col items-center justify-center gap-1.5" id="mobileMenuBtn" aria-label="Toggle menu">

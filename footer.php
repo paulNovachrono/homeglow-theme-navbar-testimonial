@@ -4,7 +4,9 @@
 
             <!-- Logo & About -->
             <div>
-                <span class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white w-full"><?php bloginfo('name'); ?></span>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>" class="h-16 w-auto">
+                </a>
                 <p class="text-white/70 mt-4 leading-relaxed">Expert remodeling, renovations, and custom home builds with quality craftsmanship and exceptional service.</p>
                 <div class="flex gap-3 mt-6">
                     <a href="#" class="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center hover:bg-accent transition duration-300" aria-label="Facebook">
