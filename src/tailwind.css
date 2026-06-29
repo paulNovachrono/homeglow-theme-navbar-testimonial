@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@source "../**/*.php";
+
+@theme {
+  --color-primary: #1d4ed8;
+  --color-secondary: #64748b;
+  --color-accent: #D89E33;
+  --color-green: #052716
+}
+
+body:not(.home) #main {
+  padding-top: 5rem;
+}
+
+/* ─── Glassmorphic Navbar (transparent at top, solid on scroll) ─── */
+
+/* Header base: invisible until scroll */
+#site-header {
+  pointer-events: none;
+}
+#site-header > div {
+  pointer-events: auto;
+}
+
+/* Desktop nav body: glass at top, solid white on scroll */
+#navBody {
+  width: 90%;
+  max-width: 90rem;
+  margin-inline: auto;
+  @apply bg-white/10 backdrop-blur-xl shadow-sm;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid rgba(255 255 255 / 0.15);
+}
+.scrolled #navBody {
+  @apply bg-white shadow-md;
+  border-color: transparent;
+  max-width: 80rem;
+  padding-inline: 1.5rem;
+}
+
+/* Mobile nav body: glass at top, solid on scroll */
+#mobileNavBody {
+  margin-inline: auto;
+  @apply bg-white/10 backdrop-blur-xl shadow-sm;
+  border: 1px solid rgba(255 255 255 / 0.15);
+}
+.scrolled #mobileNavBody {
+  @apply bg-white;
+  border-color: transparent;
+  width: 90%;
+}
+
+/* Nav item pill hover effect */
+#desktopNav .menu-item {
+  position: relative;
+}
+#desktopNav .menu-item a {
+  position: relative;
+  z-index: 1;
+  @apply block px-5 py-2.5 text-base font-medium text-white/80 rounded-full transition-colors duration-200;
+}
+#desktopNav .menu-item a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  @apply rounded-full bg-transparent transition-colors duration-200;
+}
+#desktopNav .menu-item a:hover::before {
+  @apply bg-white/10;
+}
+#desktopNav .menu-item a:hover {
+  @apply text-white;
+}
+.scrolled #desktopNav .menu-item a {
+  @apply text-gray-700;
+}
+.scrolled #desktopNav .menu-item a:hover::before {
+  @apply bg-green/10;
+}
+.scrolled #desktopNav .menu-item a:hover {
+  @apply text-gray-900;
+}
+
+/* Logo: white on glass, dark on scroll */
+#navBody .text-green,
+#mobileNavBody .text-green {
+  transition: color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  color: white;
+}
+.scrolled #navBody .text-green,
+.scrolled #mobileNavBody .text-green {
+  color: var(--color-green);
+}
+
+/* Hamburger bars: white on glass, dark on scroll */
+.nav-bar {
+  transition: all 0.3s ease;
+}
+#site-header .nav-bar {
+  background-color: white;
+}
+#site-header.scrolled .nav-bar {
+  background-color: var(--color-green);
+}
+
+/* Testimonial carousel: hide scrollbar */
+#testimonialSlider {
+  scrollbar-width: none;
+}
+#testimonialSlider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile drawer nav links */
+#mobileDrawer .menu-item a {
+  @apply block py-3 text-gray-700 font-medium text-base border-b border-gray-100 transition-colors duration-200;
+}
+#mobileDrawer .menu-item a:hover {
+  @apply text-green;
+}
+
+/* Hamburger animation */
+#mobileMenuBtn.active .nav-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+#mobileMenuBtn.active .nav-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+#mobileMenuBtn.active .nav-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}

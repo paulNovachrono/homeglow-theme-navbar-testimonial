@@ -1,0 +1,18 @@
+{
+  "name": "ishan",
+  "version": "1.0.0",
+  "description": "Custom WordPress theme for HomeGlow Builders",
+  "private": true,
+  "scripts": {
+    "dev": "tailwindcss -i ./src/tailwind.css -o ./assets/css/output.css --watch",
+    "build": "tailwindcss -i ./src/tailwind.css -o ./assets/css/output.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "tailwindcss": "^4.0.0"
+  },
+  "dependencies": {
+    "lenis": "^1.3.24",
+    "motion": "^12.41.0"
+  }
+}
