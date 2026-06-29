@@ -311,77 +311,47 @@ get_header(); ?>
     </section>
 
     <!-- Testimonials -->
-    <section class="py-16 md:py-24 bg-gray-100">
-        <div class="max-w-5xl mx-auto px-4 md:px-8">
+    <section class="py-16 md:py-24 bg-gray-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="text-center mb-12">
                 <span class="text-accent font-semibold uppercase tracking-widest text-sm">Testimonials</span>
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-3">What Our Clients Say</h2>
             </div>
-            <div class="relative overflow-hidden" id="testimonialTrack">
-                <div class="flex transition-transform duration-500 ease-in-out" id="testimonialSlider">
-                    <div class="testimonial-slide min-w-full px-4">
-                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm max-w-3xl mx-auto">
-                            <div class="flex justify-center gap-1 mb-4">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+
+            <div class="relative" id="testimonialTrack">
+                <div class="flex gap-5 overflow-x-auto" id="testimonialSlider">
+                    <?php
+                    $reviews = [
+                        ['name' => 'Sarah M.', 'project' => 'Kitchen Renovation', 'img' => 'https://i.pravatar.cc/150?u=sarah', 'text' => 'Ishan transformed our outdated kitchen into a stunning modern space. The team was professional, communicative, and completed the project ahead of schedule. We couldn\'t be happier with the results!'],
+                        ['name' => 'James D.', 'project' => 'Bathroom Remodel', 'img' => 'https://i.pravatar.cc/150?u=james', 'text' => 'We hired Ishan for a full bathroom remodel and they exceeded our expectations. Attention to detail was impeccable and the craftsmanship is top-notch. Highly recommend!'],
+                        ['name' => 'Michael K.', 'project' => 'Flooring Installation', 'img' => 'https://i.pravatar.cc/150?u=michael', 'text' => 'The flooring installation was flawless. Ishan\'s team was punctual, respectful of our home, and the quality of work is outstanding. Our new hardwood floors look amazing.'],
+                        ['name' => 'Emily R.', 'project' => 'Custom Home Build', 'img' => 'https://i.pravatar.cc/150?u=emily', 'text' => 'Our custom home build was a dream come true thanks to Ishan. From foundation to finishing touches, every detail was handled with care and professionalism. Truly a 5-star experience!'],
+                        ['name' => 'Robert L.', 'project' => 'Interior Painting', 'img' => 'https://i.pravatar.cc/150?u=robert', 'text' => 'Ishan painted our entire home interior and the transformation is incredible. The team was clean, efficient, and the finish is flawless. We\'ve already recommended them to all our neighbors!'],
+                    ];
+                    foreach ($reviews as $r) : ?>
+                        <div class="testimonial-card flex-shrink-0 w-[85vw] md:w-80 bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                            <div class="flex items-center gap-1.5 mb-3">
+                                <div class="flex gap-0.5">
+                                    <?php for ($i = 0; $i < 5; $i++) : ?>
+                                        <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <?php endfor; ?>
+                                </div>
+                                <span class="text-xs font-medium text-gray-400 flex items-center gap-1">
+                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12.18V13.83H18.69C18.36 15.68 16.95 17.21 14.94 18L15.27 19.9L17.08 20.15C19.7 18.27 21.35 15.13 21.35 11.1Z"/><path d="M12 21C15.24 21 18.01 19.85 20.04 17.79L17.08 20.15C15.47 21.81 13.21 22.5 11.05 22C7.64 21.35 4.96 18.56 4.38 15.14L4.69 15.19L6.55 14.3C6.96 16.41 8.8 18.01 11.05 18.25C12.39 18.43 13.7 18.13 14.94 17.45L17.08 20.15C15.81 22.05 13.97 23 12 23C8.13 23 4.96 20.54 3.5 17.27L4.38 15.14C3.08 12.05 4.04 8.47 6.96 6.55C8.25 5.66 9.79 5.11 11.5 5.11C13.81 5.11 15.87 6.04 17.41 7.54L20.04 4.91C17.49 2.55 14.16 1 11.05 1C6.03 1 1.75 4.5 1 9.72L4.38 15.14C5.53 11.89 8.87 9.55 12 9.55C13.34 9.55 14.61 9.92 15.7 10.55L18.69 7.87C16.62 6.18 13.96 5.11 11.07 5.11Z"/></svg>
+                                    Google Review
+                                </span>
                             </div>
-                            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">"Ishan transformed our outdated kitchen into a stunning modern space. The team was professional, communicative, and completed the project ahead of schedule. We couldn't be happier with the results!"</p>
-                            <div class="mt-8 flex items-center justify-center gap-4">
-                                <img src="https://i.pravatar.cc/150?u=sarah" alt="" class="w-14 h-14 rounded-full object-cover">
-                                <div class="text-left">
-                                    <h4 class="font-bold text-gray-900">Sarah M.</h4>
-                                    <p class="text-sm text-gray-500">Kitchen Renovation</p>
+                            <p class="text-sm text-gray-600 leading-relaxed line-clamp-4">"<?php echo $r['text']; ?>"</p>
+                            <div class="mt-4 flex items-center gap-3 pt-3 border-t border-gray-100">
+                                <img src="<?php echo $r['img']; ?>" alt="" class="w-9 h-9 rounded-full object-cover flex-shrink-0">
+                                <div class="min-w-0">
+                                    <p class="font-semibold text-gray-900 text-sm truncate"><?php echo $r['name']; ?></p>
+                                    <p class="text-xs text-gray-500 truncate"><?php echo $r['project']; ?></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonial-slide min-w-full px-4">
-                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm max-w-3xl mx-auto">
-                            <div class="flex justify-center gap-1 mb-4">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            </div>
-                            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">"We hired Ishan for a full bathroom remodel and they exceeded our expectations. Attention to detail was impeccable and the craftsmanship is top-notch. Highly recommend!"</p>
-                            <div class="mt-8 flex items-center justify-center gap-4">
-                                <img src="https://i.pravatar.cc/150?u=james" alt="" class="w-14 h-14 rounded-full object-cover">
-                                <div class="text-left">
-                                    <h4 class="font-bold text-gray-900">James D.</h4>
-                                    <p class="text-sm text-gray-500">Bathroom Remodel</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-slide min-w-full px-4">
-                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm max-w-3xl mx-auto">
-                            <div class="flex justify-center gap-1 mb-4">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            </div>
-                            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">"The flooring installation was flawless. Ishan's team was punctual, respectful of our home, and the quality of work is outstanding. Our new hardwood floors look amazing."</p>
-                            <div class="mt-8 flex items-center justify-center gap-4">
-                                <img src="https://i.pravatar.cc/150?u=michael" alt="" class="w-14 h-14 rounded-full object-cover">
-                                <div class="text-left">
-                                    <h4 class="font-bold text-gray-900">Michael K.</h4>
-                                    <p class="text-sm text-gray-500">Flooring Installation</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-            </div>
-            <div class="flex justify-center gap-3 mt-8">
-                <button class="w-3 h-3 rounded-full bg-green transition-all" data-index="0"></button>
-                <button class="w-3 h-3 rounded-full bg-gray-300 transition-all" data-index="1"></button>
-                <button class="w-3 h-3 rounded-full bg-gray-300 transition-all" data-index="2"></button>
             </div>
         </div>
     </section>

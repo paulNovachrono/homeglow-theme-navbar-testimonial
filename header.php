@@ -9,10 +9,10 @@
 <?php wp_body_open(); ?>
 
 <header class="fixed inset-x-0 top-0 z-50 flex justify-center pt-4" id="site-header">
-    <div id="navBody" class="hidden lg:flex items-center justify-between bg-transparent rounded-full px-6 py-3 transition-all duration-500">
-        <div class="bg-white rounded-3xl pl-2 pr-3 py-2 transition-all duration-300" id="navLogoBg">
+    <div id="navBody" class="hidden lg:flex items-center justify-between bg-transparent rounded-full pl-2 pr-6 py-2 transition-all duration-500">
+        <div class="bg-white rounded-full pl-2 pr-3 py-2 transition-all duration-300" id="navLogoBg">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center shrink-0">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="<?php bloginfo('name'); ?>" class="h-16 w-auto">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="<?php bloginfo('name'); ?>" class="h-19 w-auto">
             </a>
         </div>
 
@@ -24,7 +24,7 @@
                 'menu_class' => 'flex items-center gap-3 list-none m-0 p-0',
                 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                 'fallback_cb' => 'wp_page_menu',
-                'depth' => 1,
+                'depth' => 3,
             ]);
             ?>
         </nav>
