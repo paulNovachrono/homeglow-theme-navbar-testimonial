@@ -10,9 +10,11 @@
 
 <header class="fixed inset-x-0 top-0 z-50 flex justify-center pt-4" id="site-header">
     <div id="navBody" class="hidden lg:flex items-center justify-between bg-transparent rounded-full px-6 py-3 transition-all duration-500">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center shrink-0">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>" class="h-16 w-auto">
-        </a>
+        <div class="bg-white rounded-3xl pl-2 pr-3 py-2 transition-all duration-300" id="navLogoBg">
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center shrink-0">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>" class="h-16 w-auto">
+            </a>
+        </div>
 
         <nav class="flex items-center" id="desktopNav">
             <?php
@@ -28,7 +30,7 @@
         </nav>
 
         <div class="flex items-center gap-3 shrink-0">
-            <a href="/contact" class="bg-accent text-white font-semibold px-5 py-2 rounded-full hover:bg-accent/90 transition-all duration-300 text-sm">Request a Free Estimate</a>
+            <a href="/contact" class="bg-accent text-white font-semibold px-5 py-4 rounded-full hover:bg-accent/90 transition-all duration-300 text-sm">Request a Free Estimate</a>
         </div>
     </div>
 

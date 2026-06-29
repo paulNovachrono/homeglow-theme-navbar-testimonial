@@ -82,14 +82,12 @@ body:not(.home) #main {
 }
 
 /* Logo: white on glass, dark on scroll */
-#navBody .text-green,
-#mobileNavBody .text-green {
-  transition: color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  color: white;
+/* Logo white bg behind image on glass, fades on scroll */
+#navLogoBg {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.scrolled #navBody .text-green,
-.scrolled #mobileNavBody .text-green {
-  color: var(--color-green);
+.scrolled #navLogoBg {
+  background: transparent;
 }
 
 /* Hamburger bars: white on glass, dark on scroll */
